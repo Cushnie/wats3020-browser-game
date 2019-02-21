@@ -2,11 +2,15 @@
 /* Build a tic tac toe game for two players. */
 
 // TODO: declare a global variable named 'game` - it will reference the instance of the current game
-
+let game;
 // TODO: Create a class called `Player`. The `constructr()` should look for a
 // parameter called `token` and should set `this.token` as a property of
 // the class.
-
+class Player {
+    constructor(token) {
+        this.token = token;
+    }
+}
 
 // Tic Tac Toe Game Class
 class TicTacToe {
@@ -22,29 +26,29 @@ class TicTacToe {
       // progress.
 
       // TODO: Set `this.currentPlayer` equal to `null`
-
+        this.currentPlayer = null;
       // TODO: Set `this.gameStatus` equal to `null`
-
+        this.gameStatus = null;
       // TODO: Set `this.winner` equal to `null`
-
+        this.winner = null;
       // TODO: Set `this.moveCount` equal to `0`
-
+        this.moveCount = 0;
       // TODO: Set up DOM elements used in game as Class properties
 
       // TODO: Set `this.startPrompt` equal to the `#start-prompt` element
-
+        this.startPrompt = document.querySelector('#start-prompt');
       // TODO: Set `this.movePrompt` equal to the `#move-prompt` element
-
+        this.movePrompt = document.querySelector('#move-prompt');
       // TODO: Set `this.currentPlayerToken` equal to the `#player-token` element
-
+        this.currentPlayerToken = document.querySelector('#player-token');
       // TODO: Set `this.gameboard` equal to the `#gameboard` element
-
+        this.gameboard = document.querySelector('#gameboard');
       // TODO: Set `this.winScreen` equal to the `#win-screen` element
-
+        this.winScreen = document.querySelector('#win-screen');
       // TODO: Set `this.winnerToken` equal to the `#winner-token` element
-
+        this.winnerToken = document.querySelector('#winner-token');
       // TODO: Set `this.drawScreen` equal to the `#draw-screen` element
-
+        this.drawScreen = document.querySelector('#draw-screen');
       // Initialize an Array representing the starting state of the game board.
       // This is provided for you. We can access the spaces on the board using
       // (X, Y) coordinates as `this.gameState[x][y]`, which is how the game
