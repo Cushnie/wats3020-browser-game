@@ -235,18 +235,18 @@ class TicTacToe {
         let newTile = document.createElement('span');
         // TODO: Set the `class` attribute on `newTile` to equal the
         // placeholder styles ("tile fas fa-question-sign").
-        let newTile.setAttribute('class','fas fa-question-sign tile');
+        newTile.setAttribute('class','fas fa-question-sign tile');
         // TODO: Set the `data-x` attribute on the `newTile` element
         // equal to `i`.
-
+        newTile.setAttribute('data-x',i);
         // TODO: Set the `data-y` attribute on the `newTile` element
         // equal to `j`.
-
+        newTile.setAttribute('data-y',j);
 
         // TODO: Append `newTile` as a child to `newCol`.
-
+        newCol.appendChild('newTile');
         // TODO: Append `newCol` as a child to `newRow`.
-
+        newRow.appendChild('newCol');
         // NOTE: Your second `for` loop should end here.
       }
       // TODO: Append the `newRow` element to `this.gameboard` as a child element.
