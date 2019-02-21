@@ -156,11 +156,13 @@ class TicTacToe {
     // 3. Set the class attribute of the tile to reflect which player has claimed it
 
     // TODO: Define a variable called `tile_x` that equals the `data-x` attribute on the `event.target`.
-
+    let tile_x = event.target.dataset.x;
     // TODO: Define a variable called `tile_y` that equals the `data-y` attribute on the `event.target`.
-
+    let tile_y = event.target.dataset.y;
     // TODO: Claim this spot in the `this.gameState` array for the player.
-
+    if (!this.gameState[tile_x][tile_y]) {
+      event.target.setAttribute('class', `tile played fas fa-${this.currentPlayer.token}`)
+    }
     // TODO: Set the class on the `event.target` to show the player's token. The class
     // should be: `tile played fas fa-${this.currentPlayer.token}`.
   }
@@ -188,9 +190,12 @@ class TicTacToe {
 
     // TODO: Select all of the `.tile` elements into a variable called
     // `tileElements`.
-
+    let tileElements = document.querySelectorAll('.tile');
     // TODO: Use a loop to add a "click" event listener to each tile that
     // will call the `handleMove` function whenever a tile is clicked.
+    for (const tile of tileElements) {
+      tile.addEventListener('click', handleMove);
+    }
   }
   showWinScreen() {
     // This method displays the end game screen for a Win.
@@ -230,18 +235,18 @@ class TicTacToe {
         // TODO: Create a new `div` element called `newCol`.
         let newCol = document.createElement('div');
         // TODO: Set the `class` attribute on `newCol` to "col-xs-3".
-        newCol.setAttribute('class','col-xs-3');
+        newCol.setAttribute('class', 'col-xs-3');
         // TODO: Create a new `span` element called `newTile`.
         let newTile = document.createElement('span');
         // TODO: Set the `class` attribute on `newTile` to equal the
         // placeholder styles ("tile fas fa-question-sign").
-        newTile.setAttribute('class','fas fa-question-sign tile');
+        newTile.setAttribute('class', 'fas fa-question-sign tile');
         // TODO: Set the `data-x` attribute on the `newTile` element
         // equal to `i`.
-        newTile.setAttribute('data-x',i);
+        newTile.setAttribute('data-x', i);
         // TODO: Set the `data-y` attribute on the `newTile` element
         // equal to `j`.
-        newTile.setAttribute('data-y',j);
+        newTile.setAttribute('data-y', j);
 
         // TODO: Append `newTile` as a child to `newCol`.
         newCol.appendChild('newTile');
@@ -250,12 +255,12 @@ class TicTacToe {
         // NOTE: Your second `for` loop should end here.
       }
       // TODO: Append the `newRow` element to `this.gameboard` as a child element.
-
+      this.gameboard.appendChild('newRow');
       // NOTE: Your first `for` loop should end here.
     }
     // TODO: Call `this.setUpTileListeners()` to add event listeners to the
     // `.tile` elements.
-
+    this.setUpTileListeners();
   }
   initializeMovePrompt() {
     // This method initializes the `this.movePrompt` element.
