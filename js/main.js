@@ -182,7 +182,7 @@ document.addEventListener('win', (event) => {
 
 document.addEventListener('draw', (event) => {
   console.log('draw event fired');
-  game.showDrawScreen;
+  game.showDrawScreen();
 })
 
 function handleMove(event) {
