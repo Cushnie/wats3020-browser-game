@@ -138,18 +138,18 @@ class TicTacToe {
     this.gameboard.innerHTML = '';
     for (let i = 0; i < 3; i++) {
       let newRow = document.createElement('div');
-      newRow.setAttribute('class', 'row');
+      newRow.setAttribute('class','row');
       for (let j = 0; j < 3; j++) {
         let newCol = document.createElement('div');
         newCol.setAttribute('class', 'col-xs-3');
         let newTile = document.createElement('span');
-        newTile.setAttribute('class', 'fas fa-question-sign tile');
-        newTile.setAttribute('data-x', i);
-        newTile.setAttribute('data-y', j);
-        newCol.appendChild('newTile');
-        newRow.appendChild('newCol');
+        newTile.setAttribute('class','fas fa-question-sign tile');
+        newTile.setAttribute('data-x',i);
+        newTile.setAttribute('data-y',j);
+        newCol.appendChild(newTile);
+        newRow.appendChild(newCol);
       }
-      this.gameboard.appendChild('newRow');
+      this.gameboard.appendChild(newRow);
     }
     this.setUpTileListeners();
   }
